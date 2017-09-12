@@ -1,0 +1,43 @@
+<?php
+
+/*
+plugin by Nada to push blogs.cul updates out to other WPMU instances
+totally modelled on the sites plugin
+*/
+
+/* ========================================================================== */
+
+
+# define class to make the other_instances page
+class dd_other_instances
+{
+	var $done;
+
+	function dd_other_instances()
+	{
+		if(function_exists('add_action')) {
+		add_action('admin_menu',array(&$this,'add_other_instances_menu'));
+#		add_action('wpmublogsaction',array(&$this,'assign_blogs_link'));
+	}
+	$this->done = FALSE;	
+
+
+	function add_other_instances_menu()
+	{
+	add_submenu_page('wpmu-admin.php', __('Other Instances'), __('Other Instances'), 'manage_options', 'sites', array(&$this, 'other_instances_page'));
+	}
+
+
+	/** ====== config_page ====== */
+	function sites_page()
+	{
+        global $wpdb;
+
+	print '<div class="wrap" style="position: relative">';
+	print 'Under construction by Nada. Please email <a href="mailto:nco2104@columbia.edu">nco2104@columbia.edu</a> if you can see this page and you're not in LDPD.';
+	print '</div'>;
+
+	}
+
+}
+# end class dd_other_instances
