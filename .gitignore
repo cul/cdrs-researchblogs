@@ -6,3 +6,5 @@
 
 # Ignore OS-specific
 .DS_Store
+
+/log
