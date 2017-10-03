@@ -32,7 +32,7 @@ add_action('admin_menu', 'remove_submenus');
 extract(wind_getSiteOptions());
 
 // get the base directory for the wp install; used various places
-$wind_wp_path_pieces = explode("wp-content/", dirname(__FILE__)); 
+$wind_wp_path_pieces = explode("wp-content/", dirname(__FILE__));
 $WIND_WP_PATH = $wind_wp_path_pieces[0];
 #trigger_error("Abs path is $WIND_WP_PATH", E_USER_WARNING);
 
@@ -54,12 +54,13 @@ function wp_new_user_notification( $user_id, $plaintext_pass ) {
 }
 
 # include registration.php
-require_once( $WIND_WP_PATH . '/wp-includes/registration.php');
+// commented out 4/8/2014 by er2576. deprecated.
+//require_once( $WIND_WP_PATH . '/wp-includes/registration.php');
 
 # sets the roles for student, instructor
-$STUDENT = array('cworks_prefix' => 'CUcourse', 'nra_nra' => 'NRA', 'nra_student' => 'NRAS', 'nra_aud' => 'AUD', 'wind' => 'st', 
+$STUDENT = array('cworks_prefix' => 'CUcourse', 'nra_nra' => 'NRA', 'nra_student' => 'NRAS', 'nra_aud' => 'AUD', 'wind' => 'st',
 					'wpmu_setting_name'=> 'student_role', 'wpmu_setting_default' => 'author', 'generic_name' => 'a student');
-$INSTRUCTOR = array('cworks_prefix' => 'CUinstr', 'nra_ta' => 'TA', 'nra_instructor' => 'NRAI', 'wind' => 'fc', 
+$INSTRUCTOR = array('cworks_prefix' => 'CUinstr', 'nra_ta' => 'TA', 'nra_instructor' => 'NRAI', 'wind' => 'fc',
 					'wpmu_setting_name' => 'instructor_role', 'wpmu_setting_default' => 'editor', 'generic_name' => 'an instructor');
 $ROLES = array( 'student'=> $STUDENT, 'instructor'=> $INSTRUCTOR );
 
