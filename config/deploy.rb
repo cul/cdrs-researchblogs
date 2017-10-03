@@ -22,16 +22,15 @@ set :title, 'Research Blogs'
 # List custom plugins and themes to pull in from repo
 
 set :wp_custom_mu_plugins, {
-  'old_wind' => 'wp-content/mu-plugins/old_wind',
   'wind_plugin' => 'wp-content/mu-plugins/wind_plugin',
+  'wind.php' => 'wp-content/mu-plugins/wind.php',
   'alter-kses' => 'wp-content/mu-plugins/alter-kses',
   'cache-flusher' => 'wp-content/mu-plugins/cache-flusher',
   'listem' => 'wp-content/mu-plugins/listem',
   'more-privacy' => 'wp-content/mu-plugins/more-privacy',
   'push-updates' => 'wp-content/mu-plugins/push-updates',
   'show_emails' => 'wp-content/mu-plugins/show_emails',
-  'user-switching' => 'wp-content/mu-plugins/user-switching',
-  'wind' => 'wp-content/mu-plugins/wind'
+  'user-switching' => 'wp-content/mu-plugins/user-switching'
 }
 
 set :wp_custom_themes, {
