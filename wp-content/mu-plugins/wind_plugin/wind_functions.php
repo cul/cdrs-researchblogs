@@ -31,7 +31,7 @@ class Affiliation {
 	var $_is_subscribed;
 	
 	// constructor
-	function Affiliation($courseNumber, $uni, $role, $orig_type = "UNKNOWN") {
+	function __construct($courseNumber, $uni, $role, $orig_type = "UNKNOWN") {
 		$this->_uni = $uni;
 		//holds "student" or "instructor" array here.
 		$this->_role = $role;
